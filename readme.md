@@ -144,6 +144,7 @@ If you are in Bernard's Group, you can use skynet (our own cluster), ip is 10.68
 
 
 ## Some useful codes
+<!--
 ### Debug
 1. tensor 2 CV IMAGE 
 ```
@@ -157,6 +158,7 @@ cv2.imwrite('/data/debug/img.png', img_output)
 2. model parameters  
 model.SFE1.nn._modules['0'].weight
 
+-->
 ### Linux 
 1. counting  
 ls -l | wc -l
