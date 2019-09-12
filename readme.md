@@ -132,8 +132,15 @@ srun --time=5-00:00:00 --cpus-per-task=4 --mem=10G --gres=gpu:1 --job-name=gsr8 
 ```
 There is a [tmux cheatsheet](https://gist.github.com/MohamedAlaa/2961058) 
 
+### Load or purge modules
+- use `module list` to see your current modules
+- use `module avail` to see all the modules available in cluster
+- use `module purge` to unload all the modules you loaded
+- use `module unload xxx` to unload a module 
+- use `module load xxx` to load the module you want
 
-###  data localtion 
+
+###  Data Localtion 
 Put your data in this folder `/ibex/scratch/$YOUR ACCOUNT$`. IO in this folder is faster than other location.
 
 ### File Transfer
@@ -148,7 +155,8 @@ You can know your ip by `ifconfig`
 If you want to scp many files, you can zip it at first. It's faster.  
 
 ### Skynet IP
-If you are in Bernard's Group, you can use skynet (our own cluster), ip is 10.68.106.3.  `ssh qiang@10.68.106.3`
+If you are in Bernard's Group, you can use skynet (our own cluster), ip is 10.68.106.3.  
+Login in by  `ssh youraccount@10.68.106.3`
 
 
 ## Some useful codes
