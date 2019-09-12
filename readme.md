@@ -1,8 +1,8 @@
 # HandBook for Deep Learning
 ## Content
 1. [How to install environment](#anaconda-and-environment)  
-1. [How to use ibex](#how-to-use-ibex)  
-1. [How to use Pytorch](#how-to-use-pytorch) 
+1. [How to use Pytorch](#how-to-use-pytorch)
+1. [How to use Ibex](#how-to-use-ibex)  
 1. [Useful Cheatsheet](#some-useful-codes)  
 
 ## Anaconda and Environment
