@@ -3,7 +3,6 @@
 Anaconda3 is a very useful tool to manage environment. I usually install a new env for each different project. Like, when I worked on deep gcn, I created an anaconda3 env called deepgcn. Everytime I wanted to run code of this project, I just had to `conda activate deepgcn` to activate the env. 
 
 ### How to use conda
-See the [doc](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) here for detailed information.   
 Here is example how to install anaconda3 and pytorch env and use them.
 
 
@@ -33,12 +32,21 @@ conda install -y pytorch torchvision cudatoolkit=10.0 tensorflow python=3.7 -c p
 # install useful modules
 pip install tqdm
 ```
-Install the env above by: `source deepgcn_env_install.sh`
+Install the env above by: `source deepgcn_env_install.sh`. Now you install the a new env called deepgcn, `conda activate deepgcn` and have fun!
 
+If you want to improve you knowledge about anaconda, see the [doc](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) here for detailed information. 
 
 ### Install CUDA and GPU Driver
 There is a bash script helps you install CUDA10, cudnn and driver on unbuntu18.04 easily. All you need to do is `source modules/install-cuda-10-ubuntu18.sh`.
 
+
+### Jupyter Lab
+Jupyter lab is a very useful web-based user interface for project. It's automaticall installed when you install ananconda3. 
+You have to add conda env to jupyter lab manually by code below. 
+```
+conda activate myenv
+python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
+```
 
 ## How to use Pytorch
 For beginners, there are official [tutorials](https://pytorch.org/tutorials/) and [60min exercise](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html) you can try at first. It's quite beginer-friendly and easy to follow.
@@ -48,19 +56,65 @@ Also, you can try some easy and funny experiment:
 
 
 To improve futher, I would recommend go through other's code. I recommend serval repos in good structure and easy to understand and implement.
-[CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) by Jun-yan Zhu.
-[deep_gcn_pytorch](https://github.com/lightaime/deep_gcns_torch) by me and Guohao Li.
+- [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) by Jun-yan Zhu.
+- [deep_gcn_pytorch](https://github.com/lightaime/deep_gcns_torch) by me and Guohao Li.
+- You need to refer to the [official document](https://pytorch.org/docs/stable/index.html) and stackoverflow sometimes.
 
-You need to refer to the [official document](https://pytorch.org/docs/stable/index.html) and stackoverflow sometimes. Don't hesitate to ask questions in the github repos when you need help.
+ Don't hesitate to ask questions in all the github repos when you need help.
 
 
-# How to use Ibex
-1. termius setup.   
-address:vlogin.ibex.kaust.edu.sa  
-username: qiang  
-password: Kaustxxxx  
+## How to use Ibex
+### Termius
+I would recomment a software called [termius](https://termius.com/) to all of you. This software keep you away from inputing account and paaword every time you want to login in the cluster.
+
+You have to add host in termius. And add address, click ssh, add username and password. For example:
    
-2. open a terminal   
+- address:vlogin.ibex.kaust.edu.sa  
+- username: qiang  
+- password: Kaustxxxx  
+
+### Apply for resources in cluster
+1. sbatch
+ 
+First option is using sbatch to send your job. 
+Sbatch send your job in the priority squeue and your code will run even if your connection with cluster is closed for some reason.
+
+There is an example of sbatch file. (find the file in `/modules/train_ibex.sh`):
+```
+#!/bin/bash
+#SBATCH -J dg_cls
+#SBATCH -o %x.%3a.%A.out
+#SBATCH -e %x.%3a.%A.err
+#SBATCH --time=9-0:00:00
+#SBATCH --gres=gpu:v100:1
+#SBATCH --cpus-per-task=9
+#SBATCH --mem=32G
+#SBATCH --qos=ivul
+#SBATCH --mail-user=guocheng.qian@kaust.edu.sa
+#SBATCH --mail-type=ALL
+
+# activate your conda env
+echo "Loading anaconda..."
+
+module purge
+module load gcc
+module load cuda/10.1.105
+module load anaconda3
+source ~/.bashrc
+source activate deepgcn
+
+echo "...Anaconda env loaded"
+python -u examples/classification/train.py  --phase train --train_path /scratch/dragon/intel/lig/guocheng/data/deepgcn/modelnet40
+echo "...training function Done"
+```
+
+Run `sbatch train_ibex.sh` then your job will be put in the squeue. 
+
+See [KAUST IBEX offical doc](https://www.hpc.kaust.edu.sa/sites/default/files/files/public/Cluster_training/26_11_2018/0_Ibex_cheat_sheet_Nov_26_2018.pdf) for detailed information. 
+
+2. srun 
+srun allow you to use cluster just like in terminal on your local machine. 
+
 ```
 tmux new -s job1 
 srun --time=5-00:00:00 --cpus-per-task=4 --mem=10G --gres=gpu:1 --job-name=gsr8 --pty bash
@@ -69,71 +123,26 @@ module purge
 module load anaconda3
 module load gcc
 module load cuda/10.1.105
-conda activate pointsr 
-sh ./script/xx.sh
+conda activate deepgcn 
+python ...
 ```
 
-or using sbatch
-see [this](https://www.hpc.kaust.edu.sa/sites/default/files/files/public/Cluster_training/26_11_2018/0_Ibex_cheat_sheet_Nov_26_2018.pdf).
+###  data localtion 
+put your data in this folder `/ibex/scratch/$YOUR ACCOUNT$`. IO in this folder is faster than other locations.
 
-3. datasets   
-/ibex/scratch/qiang
-
-4. scp file  
-scp -r afolder qiang@10.68.74.156:/location  
-scp afile qiang@10.68.74.156:/location  
-
-remember never scp too many files. zip it at first.   
-
-5. skynet  
-ssh qiang@10.68.106.3
-
-# About env installation
-1. install software.  
-Terminator  
-Termius  
-Pycharm  
-Synergy  
-Xnview  
-Filezilla   
-conda  
-matlab  
-chrome  
-mailspring  
-slack  
-
-2. install env  
-show envs: conda info -e
-
-sudo apt-get install nvidia-XYXYX   
-Check for cuda: nvcc --version  
-
-conda env:
+### File Transfer
+Termius allows you to transfer files by GUI.
+You can also transfer files by scp. 
+```  
+scp -r FolderPath YourAccount@YourIP:/location  # scp a folder
+scp FilePath YourAccount@YourIP:/location  # scp a file
 ```
-conda create --name pytorch04
-conda activate pytorch04
-conda install pytorch=0.4.1 cuda90 torchvision tensorflow -c pytorch 
-pip install opencv-python scipy scikit-image
-```
+You can know your ip by `ifconfig`
 
-<!-- tesorflow for 3d -->
-pip install --upgrade tensorflow-graphics  
-pip install opencv-python  
-caffe:  
-make sure all from defaults channel  
-conda list --show-channel-urls  
+If you want to scp many files, you can zip it at first. It's faster.  
 
-conda create -n caffe_gpu -c defaults python=2.7 caffe-gpu    
-
-
-module list  
-module avail  
-module load cudnn  
-
-*always use conda install if applicable. conda install tensorflow, instead of pip install*
-3. conda envs to jupyter lab
-source activate myenv
-python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
+### Skynet IP
+If you are in Bernard's Group, you can use skynet (our own cluster), ip is 10.68.106.3.  `ssh qiang@10.68.106.3`
 
 # Debug
 1. tensor 2 CV IMAGE 
