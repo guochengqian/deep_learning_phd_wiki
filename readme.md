@@ -62,13 +62,13 @@ Sometimes, we may need to run jupyter lab on our laptop but use the hardware and
 
 Open one terminal in your laptop, then open jupyter lab by code below
 ```
-ssh remoteAccount@Ip # connect remote server
+ssh remoteAccount@eremoteIp # connect remote server
 # jupyter notebook password # uncomment if you have not set password (do it once)
 jupyter lab --port=9000 --no-browser &
 ```
 Open another terminal in your laptop, then map ip by code below:
 ```
-ssh -N -f -L 8888:localhost:9000 fergus@funkyserver
+ssh -N -f -L 8888:localhost:9000 remoteAccount@eremoteIp
 ```
 
 Now open your chrome, type: `http://localhost:8888/`   
