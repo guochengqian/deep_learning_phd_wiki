@@ -4,7 +4,8 @@ Anaconda3 is a very useful tool to manage environment. I usually install a new e
 
 ### How to use conda
 See the [doc](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) here for detailed information.   
-Here is example how to install env and use them.
+Here is example how to install anaconda3 and pytorch env and use them.
+
 
 deepgcn_env_install.sh:
 ```
@@ -32,11 +33,21 @@ conda install -y pytorch torchvision cudatoolkit=10.0 tensorflow python=3.7 -c p
 # install useful modules
 pip install tqdm
 ```
-
 Install the env above by: `source deepgcn_env_install.sh`
 
 
-## Pytorch
+### Install CUDA and GPU Driver
+
+
+## How to use Pytorch
+For beginners, there are official [tutorials](https://pytorch.org/tutorials/) and [60min exercise](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html) you can try at first. It's quite beginer-friendly and easy to follow.
+
+To improve futher, I would recommend see other's code. I recommend serval repos in good structure and easy to understand and implement.
+[CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) by Jun-yan Zhu.
+[deep_gcn_pytorch](https://github.com/lightaime/deep_gcns_torch) by me and Guohao Li.
+
+You need to refer to the [official document](https://pytorch.org/docs/stable/index.html) and stackoverflow sometimes. Don't hesitate to ask questions in the github repos when you need help.
+
 
 # How to use Ibex
 1. termius setup.   
