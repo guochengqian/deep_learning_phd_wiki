@@ -1,4 +1,10 @@
 # HandBook for Deep Learning
+## Content
+1. [how to install environment](#anaconda3-and-environment)  
+1. [how to use ibex](#how-to-use-ibex)  
+1. [Pytorch](#how-to-use-pytorch) 
+1. [Useful Cheatsheet](#some-useful-codes)  
+
 ## Anaconda and Environment
 Anaconda3 is a very useful tool to manage environment. I usually install a new env for each different project. Like, when I worked on deep gcn, I created an anaconda3 env called deepgcn. Everytime I wanted to run code of this project, I just had to `conda activate deepgcn` to activate the env. 
 
