@@ -63,7 +63,7 @@ Also, you can try some easy and funny experiment:
 
 To improve futher, I would recommend go through other's code. I recommend serval repos in good structure and easy to understand and implement.
 - [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) by [Jun-yan Zhu](https://people.csail.mit.edu/junyanz/).
-- [deep_gcn_pytorch](https://github.com/lightaime/deep_gcns_torch) by me and [Guohao L]i(https://github.com/lightaime).
+- [deep_gcn_pytorch](https://github.com/lightaime/deep_gcns_torch) by me and [Guohao Li](https://github.com/lightaime).
 - You need to refer to the [official document](https://pytorch.org/docs/stable/index.html) and stackoverflow sometimes.
 
  Don't hesitate to ask questions in all the github repos when you need help.
