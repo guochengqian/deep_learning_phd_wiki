@@ -38,7 +38,8 @@ conda install -y pytorch torchvision cudatoolkit=10.0 tensorflow python=3.7 -c p
 # install useful modules
 pip install tqdm
 ```
-Install the env above by: `source deepgcn_env_install.sh`. Now you install the a new env called deepgcn, `conda activate deepgcn` and have fun!
+Install the env above by: `source deepgcn_env_install.sh`. 
+Now you install the new env called deepgcn, `conda activate deepgcn` and have fun!
 
 If you want to improve you knowledge about anaconda, see the [doc](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) here for detailed information. 
 
