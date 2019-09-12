@@ -80,6 +80,8 @@ You have to add host in termius. Add address, click ssh, add username and passwo
 - password: Kaustxxxx  
 
 ### Apply for resources in cluster
+You can either use sbatch or srun to run your program in cluster. 
+
 1. sbatch
  
 First option is using sbatch to send your job. 
