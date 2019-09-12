@@ -1,11 +1,12 @@
 # HandBook for Deep Learning
 ## Anaconda and Environment
-Anaconda3 is a very useful tool to manage environment. I usually install one env for each different project. Like when I worked on deep gcn, I create an anaconda3 env called deepgcn. Everytime I want to run code of this project, I just have to `conda activate deepgcn` to activate the env. 
+Anaconda3 is a very useful tool to manage environment. I usually install a new env for each different project. Like, when I worked on deep gcn, I created an anaconda3 env called deepgcn. Everytime I wanted to run code of this project, I just had to `conda activate deepgcn` to activate the env. 
 
 ### How to use conda
 See the [doc](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) here for detailed information.   
 Here is example how to install env and use them.
 
+deepgcn_env_install.sh:
 ```
 #!/usr/bin/env bash
 # make sure command is : source deepgcn_env_install.sh
@@ -31,6 +32,9 @@ conda install -y pytorch torchvision cudatoolkit=10.0 tensorflow python=3.7 -c p
 # install useful modules
 pip install tqdm
 ```
+
+Install the env above by: `source deepgcn_env_install.sh`
+
 
 ## Pytorch
 
