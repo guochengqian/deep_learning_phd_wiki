@@ -174,7 +174,7 @@ watch -n 0.1 nvidia-smi
   
 ### Vim
 vim top of file :gg  
-vim end of file: ga
+vim end of file: GA (remember CAPS)  
 [Vim cheatsheet](https://vim.rtorr.com/)
 
 ### MarkDown
