@@ -43,7 +43,9 @@ Install the env above by: `source deepgcn_env_install.sh`. Now you install the a
 If you want to improve you knowledge about anaconda, see the [doc](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) here for detailed information. 
 
 ### Install CUDA and GPU Driver
-There is a bash script helps you install CUDA10, cudnn and driver on unbuntu18.04 easily. All you need to do is `source modules/install-cuda-10-ubuntu18.sh`.
+There is a bash script helps you install CUDA10, cudnn and driver on unbuntu18.04 easily. 
+Find the script `modules/install-cuda-10-ubuntu18.sh`
+All you need to do is `source modules/install-cuda-10-ubuntu18.sh`.
 
 
 ### Jupyter Lab
@@ -56,7 +58,7 @@ python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
 
 ## How to use Pytorch
 For beginners, there are official [tutorials](https://pytorch.org/tutorials/) and [60min exercise](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html) you can try at first. It's quite beginer-friendly and easy to follow.
-Also, you can try some easy and funny experiment:
+Also, you can try some easy and funny experiments:
 - [train a classifier](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py)
 - [train an image style transformer](https://github.com/leongatys/PytorchNeuralStyleTransfer/blob/master/NeuralStyleTransfer.ipynb)
 
