@@ -7,7 +7,7 @@ See the [doc](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/ma
 Here is example how to install anaconda3 and pytorch env and use them.
 
 
-deepgcn_env_install.sh:
+deepgcn_env_install.sh(find this file in modules/):
 ```
 #!/usr/bin/env bash
 # make sure command is : source deepgcn_env_install.sh
@@ -37,12 +37,17 @@ Install the env above by: `source deepgcn_env_install.sh`
 
 
 ### Install CUDA and GPU Driver
+There is a bash script helps you install CUDA10, cudnn and driver on unbuntu18.04 easily. All you need to do is `source modules/install-cuda-10-ubuntu18.sh`.
 
 
 ## How to use Pytorch
 For beginners, there are official [tutorials](https://pytorch.org/tutorials/) and [60min exercise](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html) you can try at first. It's quite beginer-friendly and easy to follow.
+Also, you can try some easy and funny experiment:
+- [train a classifier](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py)
+- [train an image style transformer](https://github.com/leongatys/PytorchNeuralStyleTransfer/blob/master/NeuralStyleTransfer.ipynb)
 
-To improve futher, I would recommend see other's code. I recommend serval repos in good structure and easy to understand and implement.
+
+To improve futher, I would recommend go through other's code. I recommend serval repos in good structure and easy to understand and implement.
 [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) by Jun-yan Zhu.
 [deep_gcn_pytorch](https://github.com/lightaime/deep_gcns_torch) by me and Guohao Li.
 
