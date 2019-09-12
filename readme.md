@@ -12,7 +12,7 @@ Anaconda3 is a very useful tool to manage environment. I usually install a new e
 Here is example how to install anaconda3 and pytorch env and use them.
 
 
-deepgcn_env_install.sh(find this file in modules/):
+deepgcn_env_install.sh(find this file in `modules/`):
 ```
 #!/usr/bin/env bash
 # make sure command is : source deepgcn_env_install.sh
