@@ -56,8 +56,8 @@ Also, you can try some easy and funny experiment:
 
 
 To improve futher, I would recommend go through other's code. I recommend serval repos in good structure and easy to understand and implement.
-- [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) by Jun-yan Zhu.
-- [deep_gcn_pytorch](https://github.com/lightaime/deep_gcns_torch) by me and Guohao Li.
+- [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) by [Jun-yan Zhu](https://people.csail.mit.edu/junyanz/).
+- [deep_gcn_pytorch](https://github.com/lightaime/deep_gcns_torch) by me and [Guohao L]i(https://github.com/lightaime).
 - You need to refer to the [official document](https://pytorch.org/docs/stable/index.html) and stackoverflow sometimes.
 
  Don't hesitate to ask questions in all the github repos when you need help.
@@ -65,9 +65,9 @@ To improve futher, I would recommend go through other's code. I recommend serval
 
 ## How to use Ibex
 ### Termius
-I would recomment a software called [termius](https://termius.com/) to all of you. This software keep you away from inputing account and paaword every time you want to login in the cluster.
+I would recomment a software called [termius](https://termius.com/) to all of you. This software keep you away from inputing account and password every time you want to login in the cluster.
 
-You have to add host in termius. And add address, click ssh, add username and password. For example:
+You have to add host in termius. Add address, click ssh, add username and password once in termius, then you just need to click the host name then you can login into cluster(ibex). For example:
    
 - address:vlogin.ibex.kaust.edu.sa  
 - username: qiang  
@@ -77,9 +77,9 @@ You have to add host in termius. And add address, click ssh, add username and pa
 1. sbatch
  
 First option is using sbatch to send your job. 
-Sbatch send your job in the priority squeue and your code will run even if your connection with cluster is closed for some reason.
+Sbatch send your job in the priority squeue and your code will contiue to run even if your connection with cluster is closed for some reason.
 
-There is an example of sbatch file. (find the file in `/modules/train_ibex.sh`):
+There is an example of sbatch file. (find the file in `modules/train_ibex.sh`):
 ```
 #!/bin/bash
 #SBATCH -J dg_cls
@@ -112,23 +112,21 @@ Run `sbatch train_ibex.sh` then your job will be put in the squeue.
 
 See [KAUST IBEX offical doc](https://www.hpc.kaust.edu.sa/sites/default/files/files/public/Cluster_training/26_11_2018/0_Ibex_cheat_sheet_Nov_26_2018.pdf) for detailed information. 
 
-2. srun 
+
+2. srun   
 srun allow you to use cluster just like in terminal on your local machine. 
+
+srun is convenient to use however it will stop run when you loss connection to ibex. You need tmux to protect the node. When you lose connection, you can use tmux to login back into the node. 
 
 ```
 tmux new -s job1 
 srun --time=5-00:00:00 --cpus-per-task=4 --mem=10G --gres=gpu:1 --job-name=gsr8 --pty bash
-
-module purge
-module load anaconda3
-module load gcc
-module load cuda/10.1.105
-conda activate deepgcn 
-python ...
 ```
+There is a [tmux cheatsheet](https://gist.github.com/MohamedAlaa/2961058) 
+
 
 ###  data localtion 
-put your data in this folder `/ibex/scratch/$YOUR ACCOUNT$`. IO in this folder is faster than other locations.
+Put your data in this folder `/ibex/scratch/$YOUR ACCOUNT$`. IO in this folder is faster than other location.
 
 ### File Transfer
 Termius allows you to transfer files by GUI.
@@ -144,7 +142,9 @@ If you want to scp many files, you can zip it at first. It's faster.
 ### Skynet IP
 If you are in Bernard's Group, you can use skynet (our own cluster), ip is 10.68.106.3.  `ssh qiang@10.68.106.3`
 
-# Debug
+
+## Some useful codes
+### Debug
 1. tensor 2 CV IMAGE 
 ```
 from TorchTools.DataTools.FileTools import _tensor2cvimage 
@@ -157,7 +157,7 @@ cv2.imwrite('/data/debug/img.png', img_output)
 2. model parameters  
 model.SFE1.nn._modules['0'].weight
 
-# Linux 
+### Linux 
 1. counting  
 ls -l | wc -l
 2. download  
@@ -170,15 +170,21 @@ stat -c '%y : %n' ./*
 watch -n 0.1 nvidia-smi
 
   
-# Vim
-1. vim top of file
-    command mode: gg  
-    vim end of file: ga
+### Vim
+vim top of file :gg  
+vim end of file: ga
+[Vim cheatsheet](https://vim.rtorr.com/)
+
+### MarkDown
+[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+### Tmux
+[Tmux Cheatsheet](https://gist.github.com/MohamedAlaa/2961058)
     
-    
-# How to design architecture 
-1. always remember to keep the changeble part as a new name. So we can
-easily load pretrained even if they are in different shape  
+### Pycharm
+[Pycharm Cheatsheet](https://www.jetbrains.com/help/pycharm/mastering-keyboard-shortcuts.html)
 
 
-# pycharm cheatsheet
+### jupter lab
+[JupyterLab Cheatsheet](https://blog.ja-ke.tech/2019/01/20/jupyterlab-shortcuts.html)
+
