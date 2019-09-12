@@ -50,12 +50,31 @@ All you need to do is `source modules/install-cuda-10-ubuntu18.sh`.
 
 
 ### Jupyter Lab
+#### coda env
 Jupyter lab is a very useful web-based user interface for project. It's automaticall installed when you install ananconda3. 
 You have to add conda env to jupyter lab manually by code below. 
 ```
 conda activate myenv
 python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
 ```
+#### remote server
+Sometimes, we may need to run jupyter lab on our laptop but use the hardware and env of remote workstation. How to do that?
+
+Open one terminal in your laptop, then open jupyter lab by code below
+```
+ssh remoteAccount@Ip # connect remote server
+# jupyter notebook password # uncomment if you have not set password (do it once)
+jupyter lab --port=9000 --no-browser &
+```
+Open another terminal in your laptop, then map ip by code below:
+```
+ssh -N -f -L 8888:localhost:9000 fergus@funkyserver
+```
+
+Now open your chrome, type: `http://localhost:8888/`   
+Enjoy your remote jupyter lab. 
+
+More info see [blog](http://www.blopig.com/blog/2018/03/running-jupyter-notebook-on-a-remote-server-via-ssh/)
 
 ## How to use Pytorch
 For beginners, there are official [tutorials](https://pytorch.org/tutorials/) and [60min exercise](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html) you can try at first. It's quite beginer-friendly and easy to follow.
