@@ -242,10 +242,10 @@ you can use github pages to host your website for free. Just follow the step, it
 2. Create a new repository(repo) in github, name rop into `username.github.io`  (username is your github account name). (You cannot use other name. This repo is different with others, it is a special repo called github pages. Refer to [how to design github pages for details](https://guides.github.com/features/pages/). It may take you 20 mins.)
 
 3. Find a personal homepage that you like and down the source code by : 
-```
-wget -r -p -np -k http:xxxx.com
-```
-Please ask for the author for the approval.
+    ```
+    wget -r -p -np -k http:xxxx.com
+    ```
+    Please ask for the author for the approval.
 
 4. Keep and architectrure the same but change content into yours.
 
