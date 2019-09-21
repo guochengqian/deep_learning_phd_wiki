@@ -1,10 +1,10 @@
 # My personal wiki for my Phd cadidate life in computer vision and computer graphics
 ## Content
 1. [Coding wiki](#coding-wiki)
- 1. [How to install environment](#anaconda-and-environment)  
- 1. [How to use Pytorch](#how-to-use-pytorch)
- 1. [How to use Ibex](#how-to-use-ibex)  
- 1. [Useful Cheatsheet](#some-useful-codes)  
+    1. [How to install environment](#anaconda-and-environment)  
+    1. [How to use Pytorch](#how-to-use-pytorch)
+    1. [How to use Ibex](#how-to-use-ibex)  
+    1. [Useful Cheatsheet](#some-useful-codes)  
 1. [Personal Website](#personal-website)
 # Coding Wiki
 ## Anaconda and Environment
