@@ -1,11 +1,11 @@
 # My personal wiki for my Phd cadidate life in computer vision and computer graphics
 ## Content
 1. [Coding wiki](#coding-wiki)
-1. [How to install environment](#anaconda-and-environment)  
-1. [How to use Pytorch](#how-to-use-pytorch)
-1. [How to use Ibex](#how-to-use-ibex)  
-1. [Useful Cheatsheet](#some-useful-codes)  
-
+ 1. [How to install environment](#anaconda-and-environment)  
+ 1. [How to use Pytorch](#how-to-use-pytorch)
+ 1. [How to use Ibex](#how-to-use-ibex)  
+ 1. [Useful Cheatsheet](#some-useful-codes)  
+1. [Personal Website](#personal-website)
 # Coding Wiki
 ## Anaconda and Environment
 Anaconda3 is a very useful tool to manage environment. I usually install a new env for each different project. Like, when I worked on deep gcn, I created an anaconda3 env called deepgcn. Everytime I wanted to run code of this project, I just had to `conda activate deepgcn` to activate the env. 
