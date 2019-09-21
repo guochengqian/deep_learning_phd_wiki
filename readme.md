@@ -1,5 +1,5 @@
-# Phd
-My personal wiki for my Phd cadidate life in computer vision and computer graphics
+# Deep learning Phd Wiki
+My personal wiki for my Phd cadidate life in computer vision and computer graphics.
 ## Content
 1. [Coding wiki](#coding-wiki)
     1. [How to install environment](#anaconda-and-environment)  
