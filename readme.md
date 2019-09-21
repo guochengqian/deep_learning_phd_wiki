@@ -267,7 +267,8 @@ We have to buy a new domain and redirect the xxx.github.io to this domain.
 <img src="misc/github_page.png" width="1024">   
 4. wait for the new domain to be become effective. (Be patient, it could be as long as 1day)  
 5. Done! Surf your website username.com and enjoy   
-    If you have any problem, you can looking into [Github Page Redirect](https://help.github.com/en/articles/redirects-on-github-pages)
+    If you have any problem, you can looking into 
+    [Github Page Redirect](https://help.github.com/en/articles/redirects-on-github-pages).  
 for more detailes.
 
 ### Google index 
