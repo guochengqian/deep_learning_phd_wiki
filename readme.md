@@ -264,7 +264,7 @@ We have to buy a new domain and redirect the xxx.github.io to this domain.
 1. buy a domain(you can buy from alibaba, tencent, godaddy, name.com, I buy it from www.laoxuehost.com)
 2. set up dns (please refer to details
 3. repo setting (Type your new website in custom domain in repo setting. Like the picture show.
-<img src="misc/homepage_set.png" width="1024"> 
+<img src="misc/github_page.png" width="1024"> 
 4. wait for the new domain to be become effective. (Be patient, it could be as long as 1day)
 5. Done! Surf your website username.com and enjoy
 
