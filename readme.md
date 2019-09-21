@@ -1,10 +1,12 @@
-# HandBook for Deep Learning
+# My personal wiki for my Phd cadidate life in computer vision and computer graphics
 ## Content
+1. [Coding wiki](#coding-wiki)
 1. [How to install environment](#anaconda-and-environment)  
 1. [How to use Pytorch](#how-to-use-pytorch)
 1. [How to use Ibex](#how-to-use-ibex)  
 1. [Useful Cheatsheet](#some-useful-codes)  
 
+# Coding Wiki
 ## Anaconda and Environment
 Anaconda3 is a very useful tool to manage environment. I usually install a new env for each different project. Like, when I worked on deep gcn, I created an anaconda3 env called deepgcn. Everytime I wanted to run code of this project, I just had to `conda activate deepgcn` to activate the env. 
 
@@ -227,4 +229,46 @@ vim end of file: GA (remember CAPS)
 
 ### jupter lab
 [JupyterLab Cheatsheet](https://blog.ja-ke.tech/2019/01/20/jupyterlab-shortcuts.html)
+
+
+# Personal Website
+Personal website is important to an acdemic researcher.
+## How to design Your Own Homepage
+### Github Pages set up 
+you can use github pages to host your website for free. Just follow the step, it takes you 30 min than you will enjoy your own pages.
+
+1. Create a github account. Config your git environment. (if you are not familiar with git, please refer to [git beginner](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners).) 
+
+2. Create a new repository(repo) in github, name rop into `username.github.io`  (username is your github account name). (You cannot use other name. This repo is different with others, it is a special repo called github pages. Refer to [how to design github pages for details](https://guides.github.com/features/pages/). It may take you 20 mins.)
+
+3. Find a personal homepage that you like and down the source code by : 
+```
+wget -r -p -np -k http:xxxx.com
+```
+Please ask for the author for the approval.
+
+4. Keep and architectrure the same but change content into yours.
+
+5. Put all the source code into github page repo your created before. 
+
+6. Git add, commit and push the code. 
+4. Open a new repo in github, name rop into `username.github.io`  (username is your github account name). (You cannot use other name. This repo is different with others, it is a special repo called github pages. Refer to [how to design github pages for details](https://guides.github.com/features/pages/). It may take you 20 mins.)
+
+7. Done! It's so easy. Surf your website username.github.io and enjoy
+
+
+If you want use your own domain like xxx.com instead of the free github.io, please refer to follows.
+### New domain username.com Setup
+We have to buy a new domain and map the xxx.github.io to this domain.
+1. buy a domain(you can buy from alibaba, tencent, godaddy, name.com, I buy it from www.laoxuehost.com)
+2. set up dns (please refer to details
+3. repo setting (Type your new website in custom domain in repo setting. Like the picture show.
+<img src="misc/homepage_set.png" width="1024"> 
+4. wait for the new domain to be become effective. (Be patient, it could be as long as 1day)
+5. Done! Surf your website username.com and enjoy
+
+### Google index 
+Let baidu google know your domain, so you can search your website by google
+1. submit url
+submit url to [baidu](https://ziyuan.baidu.com/linksubmit/url), [google](https://search.google.com/search-console/welcome)
 
