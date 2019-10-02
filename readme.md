@@ -1,4 +1,4 @@
-# Deep learning Phd Wiki
+# Deep Learning Phd Wiki
 My personal wiki for my Phd cadidate life in computer vision and computer graphics.
 ## Content
 1. [Coding wiki](#coding-wiki)
@@ -148,13 +148,18 @@ See [KAUST IBEX offical doc](https://www.hpc.kaust.edu.sa/sites/default/files/fi
 
 2. srun   
 srun allow you to use cluster just like in terminal on your local machine. 
-
 srun is convenient to use however it will stop run when you loss connection to ibex. You need tmux to protect the node. When you lose connection, you can use tmux to login back into the node. 
-
 ```
 tmux new -s job1 
 srun --time=5-00:00:00 --cpus-per-task=4 --mem=10G --gres=gpu:1 --job-name=gsr8 --pty bash
 ```
+
+3. salloc
+Please do NOT use salloc, only if you need all the GPUs in the node.
+```
+salloc --time=5-00:00:00 --cpus-per-task=8 --mem=32G --gres=gpu:4 --job-name=sr
+```
+
 There is a [tmux cheatsheet](https://gist.github.com/MohamedAlaa/2961058) 
 
 ### Load or purge modules
@@ -236,7 +241,7 @@ vim end of file: GA (remember CAPS)
 Personal website is important to an acdemic researcher.
 ## How to design Your Own Homepage
 ### Github Pages set up 
-you can use github pages to host your website for free. Just follow the step, it takes you 30 min than you will enjoy your own pages.
+You can use github pages to host your website for free. Just follow the step, it takes you 30 min than you will enjoy your own pages.
 
 1. Create a github account. Config your git environment. (if you are not familiar with git, please refer to [git beginner](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners).) 
 
