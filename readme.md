@@ -74,6 +74,11 @@ Open another terminal in your laptop, then map ip by code below:
 ssh -N -f -L 8888:localhost:9000 remoteAccount@eremoteIp
 ```
 
+You can kill the port forwarding by:
+```
+ps aux | grep ssh
+kill <id>
+```
 Now open your chrome, type: `http://localhost:8888/`   
 Enjoy your remote jupyter lab. 
 
