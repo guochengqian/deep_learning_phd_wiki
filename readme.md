@@ -98,7 +98,16 @@ To improve futher, I would recommend go through other's code. I recommend serval
 
  Don't hesitate to ask questions in all the github repos when you need help.
 
-
+### Some advanced operations
+1. Change layers in pretrained models
+`model.conv1[0] = new_model.conv1[0]`
+1. detach some modules
+```
+for param in model.conv1.parameters():
+    param.requres_grad = False
+for k, param in model.named_parameters():
+    print(k, param.requires_grad)
+```
 ## How to use Ibex
 ### Termius
 I would recomment a software called [termius](https://termius.com/) to all of you. This software keep you away from inputing account and password every time you want to login in the cluster.
