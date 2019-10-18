@@ -193,6 +193,7 @@ You can also transfer files by scp.
 ```  
 scp -r FolderPath YourAccount@YourIP:/location  # scp a folder
 scp FilePath YourAccount@YourIP:/location  # scp a file
+rsync -vahP FilePath qiang@10.68.74.156:location
 ```
 You can know your ip by `ifconfig`
 
