@@ -9,12 +9,15 @@ sudo ubuntu-drivers devices
 sudo ubuntu-drivers autoinstall
 
 # Install CUDA Toolkit 10
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
-sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub && sudo apt update
-sudo dpkg -i cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
+download: https://developer.nvidia.com/cuda-10.0-download-archive
+install cuda 10 according to : https://www.pugetsystems.com/labs/hpc/How-to-install-CUDA-9-2-on-Ubuntu-18-04-1184/
 
-sudo apt update
-sudo apt install -y cuda
+#wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
+#sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub && sudo apt update
+#sudo dpkg -i cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
+
+#sudo apt update
+#sudo apt install -y cuda
 
 # Install CuDNN 7 and NCCL 2
 wget https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/nvidia-machine-learning-repo-ubuntu1804_1.0.0-1_amd64.deb
