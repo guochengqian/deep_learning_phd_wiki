@@ -18,6 +18,16 @@ conda create -n deepgcn # conda create env
 conda activate deepgcn  # activate
 
 # conda install and pip install
-conda install -y pytorch torchvision cudatoolkit=10.0 tensorflow python=3.7 -c pytorch
+conda install pytorch=1.5 torchvision cudatoolkit=10.1 python=3.7 -c pytorch
+
 # install useful modules
 pip install tqdm
+
+CUDA=cu101
+TORCH=1.5.0
+
+$ pip install torch-scatter==latest+${CUDA} -f https://pytorch-geometric.com/whl/torch-${TORCH}.html
+$ pip install torch-sparse==latest+${CUDA} -f https://pytorch-geometric.com/whl/torch-${TORCH}.html
+$ pip install torch-cluster==latest+${CUDA} -f https://pytorch-geometric.com/whl/torch-${TORCH}.html
+$ pip install torch-spline-conv==latest+${CUDA} -f https://pytorch-geometric.com/whl/torch-${TORCH}.html
+$ pip install torch-geometric
