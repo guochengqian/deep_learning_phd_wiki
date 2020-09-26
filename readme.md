@@ -4,6 +4,7 @@ My personal wiki for my Phd cadidate life in computer vision and computer graphi
 1. [Coding wiki](#coding-wiki)
     1. [How to install environment](#anaconda-and-environment)  
     1. [How to use Pytorch](#how-to-use-pytorch)
+    1. [Pitfall in Python & Pytorch](#pitfall-in-python)
     1. [How to use Ibex](#how-to-use-ibex)  
     1. [Useful Cheatsheet](#some-useful-codes)  
 1. [Personal Website](#personal-website)
@@ -97,6 +98,33 @@ To improve futher, I would recommend go through other's code. I recommend serval
 - You need to refer to the [official document](https://pytorch.org/docs/stable/index.html) and stackoverflow sometimes.
 
  Don't hesitate to ask questions in all the github repos when you need help.
+
+## Pitfall in Python
+<!--the content inside list will be changed or not?-->
+1. Mutable and inmutable data types:
+
+    In Python, data types can be either mutable (changeable) or immutable (unchangable). 
+    And while most of the data types in Python are immutable (including integers, floats, strings, Booleans, and tuples), 
+    `lists and dictionaries are mutable`. That means `a global list or dictionary (mutable datatypes) can be changed even when it’s used inside of a function.`  
+    If a data type is immutable, it means it can’t be updated once it’s been created. In Pytorch, all tensor operations are immutable. 
+    e.g.: 
+        
+        initial_list = [1, 2, 3]
+        def duplicate_last(a_list):
+            last_element = a_list[-1]
+            a_list.append(last_element)
+            return a_list
+        
+        new_list = duplicate_last(a_list = initial_list)
+        print(new_list)
+        print(initial_list)
+        [1, 2, 3, 3]
+        [1, 2, 3, 3]
+    As we can see, here the global value of initial_list was updated, even though its value was only changed inside the function!  
+    Because of the mutable characteristics of list and dictionary, we usually use it to save the imortant middle results (like accuracy, metrics, args). 
+    
+1. 
+
 
 ### Some advanced operations
 1. Change layers in pretrained models
