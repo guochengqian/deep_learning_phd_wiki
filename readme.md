@@ -156,17 +156,21 @@ Sbatch send your job in the priority squeue and your code will contiue to run ev
 
 There is an example of sbatch file. (find the file in `modules/train_ibex.sh`):
 ```
-#!/bin/bash
-#SBATCH -J dg_cls
-#SBATCH -o %x.%3a.%A.out
-#SBATCH -e %x.%3a.%A.err
-#SBATCH --time=9-0:00:00
-#SBATCH --gres=gpu:v100:1
-#SBATCH --cpus-per-task=9
-#SBATCH --mem=32G
-#SBATCH --qos=ivul
-#SBATCH --mail-user=guocheng.qian@kaust.edu.sa
+#!/bin/bash --login
+#SBATCH -N 1
+##SBATCH --array=1  # repeat the task
+#SBATCH -J rloc
+#SBATCH -o log/%x.%3a.%A.out    # make sure the log folder exists
+#SBATCH -e log/%x.%3a.%A.err
+#SBATCH --time=5-0:00:00
+#SBATCH --gpus=8            # or: --gres=gpu:v100:8
+#SBATCH --gpus-per-node=8   # use gpu_wide
+#SBATCH --cpus-per-gpu=6
+#SBATCH --mem-per-gpu=45G
+#SBATCH --mail-user=xxx@kaust.edu.sa    # send message to your email
 #SBATCH --mail-type=ALL
+#SBATCH -A conf-gpu-2020.11.23
+#SBATCH --constraint=[ref_32T]  # use shared folder in v100s.
 
 # activate your conda env
 echo "Loading anaconda..."
@@ -175,8 +179,7 @@ module purge
 module load gcc
 module load cuda/10.1.105
 module load anaconda3
-source ~/.bashrc
-source activate deepgcn
+conda activate deepgcn
 
 echo "...Anaconda env loaded"
 python -u examples/classification/train.py  --phase train --train_path /scratch/dragon/intel/lig/guocheng/data/deepgcn/modelnet40
