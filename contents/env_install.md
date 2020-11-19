@@ -69,8 +69,14 @@ Set your git global username and email address. This is to let Git know who you 
 - [Termius](https://termius.com/): SSH client that works on Desktop and Mobile for connecting to local and remote machines. 
 - [tmux](https://linuxize.com/post/getting-started-with-tmux/): tools for multiple windows in terminal. Very useful for working with remote machines. 
 The tmux will keep your job running in the background even if you lose you connection with the remote machines. 
-- vim: the best command line editor. [cheatsheet](https://vim.rtorr.com/)
-- [rclone](https://rclone.org/drive/): command tools for downloading and pushing files from or to google drive.  
+[tmux cheatsheet](https://tmuxcheatsheet.com/).   
+- vim: the best command line editor. [vim cheatsheet](https://vim.rtorr.com/)
+- [rclone](https://rclone.org/install/): command tools for downloading and pushing files from or to google drive. 
+[See here for more info](https://rclone.org/drive/).    
+- [aria2](https://aria2.github.io/): a lightweight multi-protocol & multi-source command-line download utility.
+Here is the [documentation](https://aria2.github.io/manual/en/html/aria2c.html#options). 
+Here is an example (download imagenet using 16 threads and set the `continue=true` which resumes the downloading):  
+`aria2c -c -x 16 -s 16 -d imagenet http://image-net.org/challenges/LSVRC/2012/dd31405981ef5f776aa17412e1f0c112/ILSVRC2012_img_train.tar`
 
 
 ### 
