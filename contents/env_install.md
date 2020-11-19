@@ -52,6 +52,7 @@ Download the anaconda individual version from [Anaconda official website](https:
 
 The official guide how to use anaconda is [here](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).  
 Here is how install a specific environment for one project. (deepgcn_env_install.sh, find this file in `modules/`):
+    
     ```
     #!/usr/bin/env bash
     
@@ -73,6 +74,7 @@ Here is how install a specific environment for one project. (deepgcn_env_install
     # install useful modules
     pip install tqdm
     ```
+    
     Install the env above by: `source deepgcn_env_install.sh`. 
     Now you install the new env called deepgcn, `conda activate deepgcn` and have fun!
 
@@ -84,7 +86,7 @@ It's automatically installed when you install anaconda3.  You have to add conda 
     python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
     ```
 
-Sometimes, we may need to run jupyter lab on our laptop but use the hardware and env of remote workstation. How to do that?
+Remote Support! Sometimes, we may need to run jupyter lab on our laptop but use the hardware and env of remote workstation. How to do that?
 
 Open one terminal in your laptop, then open jupyter lab by code below
     ```
@@ -106,6 +108,7 @@ Now open your chrome, type: `http://localhost:8888/`
 Enjoy your remote jupyter lab. 
 
 More info see [blog](http://www.blopig.com/blog/2018/03/running-jupyter-notebook-on-a-remote-server-via-ssh/)
+
 
 ### Git Support (GitHub) 
 Using `git` command to pull, push and manage your code. 
