@@ -3,7 +3,9 @@
 ## Dependencies Related
 - [CUDA](https://developer.nvidia.com/cuda-10.1-download-archive-base): for accelerated computing 
 - [anaconda](https://www.anaconda.com/products/individual): tool for environment management
--
+- [jupyter lab](https://jupyter.org/)
+- [git](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners)
+
  
 ### CUDA installation
 You may want to see the detailed blog [here](https://www.pugetsystems.com/labs/hpc/How-to-install-CUDA-9-2-on-Ubuntu-18-04-1184/).   
@@ -49,7 +51,61 @@ Download the anaconda individual version from [Anaconda official website](https:
     Note: Please change the `/home/qiang/anaconda3` to your own path to anaconda3.  
 
 The official guide how to use anaconda is [here](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).  
+Here is how install a specific environment for one project. (deepgcn_env_install.sh, find this file in `modules/`):
+    ```
+    #!/usr/bin/env bash
+    
+    # make sure command is : source deepgcn_env_install.sh
+    
+    # uncomment if using cluster
+    # module purge
+    # module load gcc
+    # module load cuda/10.1.105
+    
+    # make sure your annaconda3 is added to bashrc (normally add to bashrc path automatically)
+    source ~/.bashrc
+    
+    conda create -n deepgcn # conda create env
+    conda activate deepgcn  # activate
+    
+    # conda install and pip install
+    conda install -y pytorch torchvision cudatoolkit=10.0 tensorflow python=3.7 -c pytorch
+    # install useful modules
+    pip install tqdm
+    ```
+    Install the env above by: `source deepgcn_env_install.sh`. 
+    Now you install the new env called deepgcn, `conda activate deepgcn` and have fun!
 
+### Jupyter Lab
+[Jupyter lab](https://jupyter.org/) Project Jupyter exists to develop open-source software, open-standards, and services for interactive computing across dozens of programming languages. 
+It's automatically installed when you install anaconda3.  You have to add conda env to jupyter lab manually by code below. 
+    ```
+    conda activate myenv
+    python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
+    ```
+
+Sometimes, we may need to run jupyter lab on our laptop but use the hardware and env of remote workstation. How to do that?
+
+Open one terminal in your laptop, then open jupyter lab by code below
+    ```
+    ssh remoteAccount@eremoteIp # connect remote server
+    # jupyter notebook password # uncomment if you have not set password (do it once)
+    jupyter lab --port=9000 --no-browser &
+    ```
+Open another terminal in your laptop, then map ip by code below:
+    ```
+    ssh -N -f -L 8888:localhost:9000 remoteAccount@eremoteIp
+    ```
+
+You can kill the port forwarding by:
+    ```
+    ps aux | grep ssh
+    kill <id>
+    ```
+Now open your chrome, type: `http://localhost:8888/`   
+Enjoy your remote jupyter lab. 
+
+More info see [blog](http://www.blopig.com/blog/2018/03/running-jupyter-notebook-on-a-remote-server-via-ssh/)
 
 ### Git Support (GitHub) 
 Using `git` command to pull, push and manage your code. 
@@ -62,6 +118,7 @@ You may have to add `ssh` to github, otherwise each time you use git command, yo
 Set your git global username and email address. This is to let Git know who you are. (If you do not change this, you can still git pull and git push as along as you add your ssh into github. However, github will not be able to appreciate your commits in commit history, they will think it is someone else make the changes not you.) To set the username and email:  
 `git config --global user.name "FIRST_NAME LAST_NAME"`  
 `git config --global user.email "MY_NAME@example.com"`  
+
 
 
 ## Terminal Related 

@@ -2,102 +2,14 @@
 My personal wiki for my Phd cadidate life in computer vision and computer graphics.
 ## Content
 1. [Coding wiki](#coding-wiki)
-    1. [Install a deep-learning-machine-environment on Ubuntu](#anaconda-and-environment)  
+    1. [Install a deep-learning-machine-environment on Ubuntu](contents/env_install.md)  
     1. [How to use Pytorch](#how-to-use-pytorch)
     1. [Pitfall in Python & Pytorch](#pitfall-in-python)
     1. [How to use Ibex](#how-to-use-ibex)  
     1. [Useful Cheatsheet](#some-useful-codes)  
 1. [Personal Website](#personal-website)
 # Coding Wiki
-## Anaconda and Environment
-Anaconda3 is a very useful tool to manage environment. I usually install a new env for each different project. Like, when I worked on deep gcn, I created an anaconda3 env called deepgcn. Everytime I wanted to run code of this project, I just had to `conda activate deepgcn` to activate the env. 
 
-### How to use conda
-Here is example how to install anaconda3 and pytorch env and use them.
-
-
-deepgcn_env_install.sh(find this file in `modules/`):
-```
-#!/usr/bin/env bash
-# make sure command is : source deepgcn_env_install.sh
-
-# uncomment to install anaconda3.
-#cd ~/
-#wget https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh
-#bash Anaconda3-2019.07-Linux-x86_64.sh
-
-# uncommet if using cluster
-# module purge
-# module load gcc
-# module load cuda/10.1.105
-
-# make sure your annaconda3 is added to bashrc (normally add to bashrc path automatically)
-source ~/.bashrc
-
-conda create -n deepgcn # conda create env
-conda activate deepgcn  # activate
-
-# conda install and pip install
-conda install -y pytorch torchvision cudatoolkit=10.0 tensorflow python=3.7 -c pytorch
-# install useful modules
-pip install tqdm
-```
-Install the env above by: `source deepgcn_env_install.sh`. 
-Now you install the new env called deepgcn, `conda activate deepgcn` and have fun!
-
-If you want to improve you knowledge about anaconda, see the [doc](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) here for detailed information. 
-
-### Install CUDA and GPU Driver
-There is a bash script helps you install CUDA10, cudnn and driver on unbuntu18.04 easily. 
-Find the script `modules/install-cuda-10-ubuntu18.sh`
-All you need to do is `source modules/install-cuda-10-ubuntu18.sh`.
-
-
-### Jupyter Lab
-#### coda env
-Jupyter lab is a very useful web-based user interface for project. It's automaticall installed when you install ananconda3. 
-You have to add conda env to jupyter lab manually by code below. 
-```
-conda activate myenv
-python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
-```
-#### remote server
-Sometimes, we may need to run jupyter lab on our laptop but use the hardware and env of remote workstation. How to do that?
-
-Open one terminal in your laptop, then open jupyter lab by code below
-```
-ssh remoteAccount@eremoteIp # connect remote server
-# jupyter notebook password # uncomment if you have not set password (do it once)
-jupyter lab --port=9000 --no-browser &
-```
-Open another terminal in your laptop, then map ip by code below:
-```
-ssh -N -f -L 8888:localhost:9000 remoteAccount@eremoteIp
-```
-
-You can kill the port forwarding by:
-```
-ps aux | grep ssh
-kill <id>
-```
-Now open your chrome, type: `http://localhost:8888/`   
-Enjoy your remote jupyter lab. 
-
-More info see [blog](http://www.blopig.com/blog/2018/03/running-jupyter-notebook-on-a-remote-server-via-ssh/)
-
-## How to use Pytorch
-For beginners, there are official [tutorials](https://pytorch.org/tutorials/) and [60min exercise](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html) you can try at first. It's quite beginer-friendly and easy to follow.
-Also, you can try some easy and funny experiments:
-- [train a classifier](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py)
-- [train an image style transformer](https://github.com/leongatys/PytorchNeuralStyleTransfer/blob/master/NeuralStyleTransfer.ipynb)
-
-
-To improve futher, I would recommend go through other's code. I recommend serval repos in good structure and easy to understand and implement.
-- [CycleGAN](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) by [Jun-yan Zhu](https://people.csail.mit.edu/junyanz/).
-- [deep_gcn_pytorch](https://github.com/lightaime/deep_gcns_torch) by me and [Guohao Li](https://github.com/lightaime).
-- You need to refer to the [official document](https://pytorch.org/docs/stable/index.html) and stackoverflow sometimes.
-
- Don't hesitate to ask questions in all the github repos when you need help.
 
 ## Pitfall in Python
 <!--the content inside list will be changed or not?-->
