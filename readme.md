@@ -2,7 +2,7 @@
 My personal wiki for my Phd cadidate life in computer vision and computer graphics.
 ## Content
 1. [Coding wiki](#coding-wiki)
-    1. [How to install environment](#anaconda-and-environment)  
+    1. [Install a deep-learning-machine-environment on Ubuntu](#anaconda-and-environment)  
     1. [How to use Pytorch](#how-to-use-pytorch)
     1. [Pitfall in Python & Pytorch](#pitfall-in-python)
     1. [How to use Ibex](#how-to-use-ibex)  
