@@ -51,9 +51,8 @@ Download the anaconda individual version from [Anaconda official website](https:
     Note: Please change the `/home/qiang/anaconda3` to your own path to anaconda3.  
 
 The official guide how to use anaconda is [here](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).  
-Here is how install a specific environment for one project. (deepgcn_env_install.sh, find this file in `modules/`):
+Here is how install a specific environment for one project. (deepgcn_env_install.sh, find this file in `modules/`):  
     
-    ```
     #!/usr/bin/env bash
     
     # make sure command is : source deepgcn_env_install.sh
@@ -73,10 +72,9 @@ Here is how install a specific environment for one project. (deepgcn_env_install
     conda install -y pytorch torchvision cudatoolkit=10.0 tensorflow python=3.7 -c pytorch
     # install useful modules
     pip install tqdm
-    ```
-    
-    Install the env above by: `source deepgcn_env_install.sh`. 
-    Now you install the new env called deepgcn, `conda activate deepgcn` and have fun!
+        
+Install the env above by: `source deepgcn_env_install.sh`. 
+Now you install the new env called deepgcn, `conda activate deepgcn` and have fun!
 
 ### Jupyter Lab
 [Jupyter lab](https://jupyter.org/) Project Jupyter exists to develop open-source software, open-standards, and services for interactive computing across dozens of programming languages. 
@@ -137,9 +135,9 @@ The tmux will keep your job running in the background even if you lose you conne
 Here is the [documentation](https://aria2.github.io/manual/en/html/aria2c.html#options). 
 Here is an example (download imagenet using 16 threads and set the `continue=true` which resumes the downloading):  
 `aria2c -c -x 16 -s 16 -d imagenet http://image-net.org/challenges/LSVRC/2012/dd31405981ef5f776aa17412e1f0c112/ILSVRC2012_img_train.tar`
+- [Markdown](https://www.markdownguide.org/):  a lightweight markup language with plain-text-formatting syntax. 
+[Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
-
-### 
 
 ## Software
 - [PyCharm](https://www.jetbrains.com/pycharm/): my favorite IDE for Python. Professional version is free for students  
