@@ -141,6 +141,8 @@ Here is an example (download imagenet using 16 threads and set the `continue=tru
 
 ## Software
 - [PyCharm](https://www.jetbrains.com/pycharm/): my favorite IDE for Python. Professional version is free for students  
+- [Clion](https://www.jetbrains.com/clion/): my favorite IDE for C and C++. Professional version is free for students  
 - [MeshLab](https://snapcraft.io/install/meshlab/ubuntu): my favorite 3D viewer. 
+- [Synergy](https://symless.com/synergy): share one mouse and keyboard between multiple computers (Linux, Mac, Windows). 
 
 
