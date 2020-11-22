@@ -51,7 +51,7 @@ Download the anaconda individual version from [Anaconda official website](https:
     Note: Please change the `/home/qiang/anaconda3` to your own path to anaconda3.  
 
 The official guide how to use anaconda is [here](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).  
-Here is how install a specific environment for one project. (deepgcn_env_install.sh, find this file in `modules/`):  
+Here is how install a specific environment for one project. (deepgcn_env_install.sh, find this file [here](../scripts/deepgcn_env_install.sh)):  
     
     #!/usr/bin/env bash
     

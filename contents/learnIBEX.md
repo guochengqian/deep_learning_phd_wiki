@@ -4,9 +4,11 @@ I would recomment a software called [termius](https://termius.com/) to all of yo
 
 You have to add host in termius. Add address, click ssh, add username and password once in termius, then you just need to click the host name then you can login into cluster(ibex). For example:
    
-- address:vlogin.ibex.kaust.edu.sa  
+- address: glogin.ibex.kaust.edu.sa  
 - username: qiang  
-- password: Kaustxxxx  
+- password: xxxxxxxx  
+
+After setting up, only a click is needed to ssh into the ibex system. 
 
 ### Apply for resources in cluster
 You can either use sbatch or srun to run your program in cluster. 
@@ -14,9 +16,9 @@ You can either use sbatch or srun to run your program in cluster.
 1. sbatch
  
 First option is using sbatch to send your job. 
-Sbatch send your job in the priority squeue and your code will contiue to run even if your connection with cluster is closed for some reason.
+Sbatch send your job in the priority queue and your code will continue to run even if you lose connection with cluster for some reason.
 
-There is an example of sbatch file. (find the file in `modules/train_ibex.sh`):
+There is an example of sbatch file:
 ```
 #!/bin/bash --login
 #SBATCH -N 1
@@ -48,18 +50,23 @@ python -u examples/classification/train.py  --phase train --train_path /scratch/
 echo "...training function Done"
 ```
 
-Run `sbatch train_ibex.sh` then your job will be put in the squeue. 
+Run `sbatch train_ibex.sh` then your job will be put in the queue.   
+You can check your queue info by : `squeue -u xxx(your account)`  
+You can check the available GPUs by: `gpu-usage --nodes|grep v100`  
+
 
 See [KAUST IBEX offical doc](https://www.hpc.kaust.edu.sa/sites/default/files/files/public/Cluster_training/26_11_2018/0_Ibex_cheat_sheet_Nov_26_2018.pdf) for detailed information. 
-
+See the [IBEX Best Practice](../files/Deep%20Learning%20Best%20Practices.pdf) for the detailed configuration of best usage on IBEX. 
 
 2. srun   
 srun allow you to use cluster just like in terminal on your local machine. 
-srun is convenient to use however it will stop run when you loss connection to ibex. You need tmux to protect the node. When you lose connection, you can use tmux to login back into the node. 
-```
-tmux new -s job1 
-srun --time=5-00:00:00 --cpus-per-task=4 --mem=10G --gres=gpu:1 --job-name=gsr8 --pty bash
-```
+srun is convenient to use, however it will stop run when you lose connection with ibex. You need tmux to protect the node. 
+When you lose connection, you can use tmux to login back into the node.  
+There is a [tmux cheatsheet](https://gist.github.com/MohamedAlaa/2961058) 
+
+You can srun into your allocated node using: `srun --jobid=yourjobid --time=00:25:00 --mem 48g --cpus-per-task=6 --pty bash`  
+To do that, you have to use Sbatch at first to query for resources and start your training there. 
+The srun is just used as a tube. After you srun into the node, you can check the memory usage of your GPUs.   
 
 3. salloc
 Please do NOT use salloc, only if you need all the GPUs in the node.
@@ -67,7 +74,6 @@ Please do NOT use salloc, only if you need all the GPUs in the node.
 salloc --time=5-00:00:00 --cpus-per-task=8 --mem=32G --gres=gpu:4 --job-name=sr
 ```
 
-There is a [tmux cheatsheet](https://gist.github.com/MohamedAlaa/2961058) 
 
 ### Load or purge modules
 - use `module list` to see your current modules
