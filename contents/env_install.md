@@ -30,7 +30,7 @@ Take CUDA 10.1 installation for example.
 
 ### Anaconda
 Download the anaconda individual version from [Anaconda official website](https://www.anaconda.com/products/individual).   
-1. Install: `bash xxx.sh`, e.g., `bash bash Anaconda3-2020.07-Linux-x86_64.sh`. Suggest keeping the default settings.   
+1. Install: `bash Anaconda3-xxx-xxx.sh`, e.g., `bash Anaconda3-2020.07-Linux-x86_64.sh`. Suggest keeping the default settings.   
 2. make sure to add anaconda path to `~/.bashrc`. If you forgot to do so, just add the below into bashrc:  
     ```
     # >>> conda initialize >>>
@@ -50,7 +50,6 @@ Download the anaconda individual version from [Anaconda official website](https:
     ```
     Note: Please change the `/home/qiang/anaconda3` to your own path to anaconda3.  
 
-The official guide how to use anaconda is [here](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).  
 Here is how install a specific environment for one project. (deepgcn_env_install.sh, find this file [here](../scripts/deepgcn_env_install.sh)):  
     
     #!/usr/bin/env bash
@@ -74,18 +73,19 @@ Here is how install a specific environment for one project. (deepgcn_env_install
     pip install tqdm
         
 Install the env above by: `source deepgcn_env_install.sh`. 
-Now you install the new env called deepgcn, `conda activate deepgcn` and have fun!
+Now you install the new env called deepgcn, `conda activate deepgcn` and have fun!  
+The official guide how to use anaconda is [here](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).  
 
 ### Jupyter Lab
-[Jupyter lab](https://jupyter.org/) Project Jupyter exists to develop open-source software, open-standards, and services for interactive computing across dozens of programming languages. 
+[Jupyter lab](https://jupyter.org/): Jupyter exists to develop open-source software, open-standards, and services for interactive computing across dozens of programming languages. 
 It's automatically installed when you install anaconda3.  You have to add conda env to jupyter lab manually by code below. 
     ```
     conda activate myenv
     python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
     ```
 
-Remote Support! Sometimes, we may need to run jupyter lab on our laptop but use the hardware and env of remote workstation. How to do that?
-
+Remote Support! 
+Sometimes, we may need to run jupyter lab on our laptop but use the hardware and env of remote workstation. How to do that?
 Open one terminal in your laptop, then open jupyter lab by code below
     ```
     ssh remoteAccount@eremoteIp # connect remote server
@@ -96,7 +96,6 @@ Open another terminal in your laptop, then map ip by code below:
     ```
     ssh -N -f -L 8888:localhost:9000 remoteAccount@eremoteIp
     ```
-
 You can kill the port forwarding by:
     ```
     ps aux | grep ssh
