@@ -39,7 +39,27 @@ for k, param in model.named_parameters():
 ```
 
 
-## Some useful codes
+## Suggested Pytorch Libraries
+### general
+- [wandb](https://www.wandb.com/): Experiment tracking, hyperparameter optimization, model and dataset versioning. 
+
+- [hydra](https://hydra.cc/): A framework for elegantly configuring complex applications. 
+
+- [PyTorch Metric Learning](https://github.com/KevinMusgrave/pytorch-metric-learning): 
+The easiest way to use deep metric learning in your application. Modular, flexible, and extensible. Like triplet loss support. 
+
+- [TNT](https://github.com/pytorch/tnt): torchnet(TNT) is a library providing powerful dataloading, logging and visualization utilities for Python. It is closely integrated with PyTorch and is designed to enable rapid iteration with any model or training regimen.
+
+### 3D
+- [Pytorch-Geometric](https://github.com/rusty1s/pytorch_geometric): Geometric Deep Learning Extension Library for PyTorch
+
+- [torch-points-kernels](https://github.com/nicolas-chaulet/torch-points-kernels): Pytorch kernels for spatial operations on point clouds
+
+- [torch-points3d](https://github.com/nicolas-chaulet/torch-points3d): Pytorch framework for doing deep learning on point clouds.
+
+- [pytorch3d](https://github.com/facebookresearch/pytorch3d):  PyTorch3D is FAIR's library of reusable components for deep learning with 3D data. 
+
+
 <!--
 ### Debug
 1. tensor 2 CV IMAGE 
