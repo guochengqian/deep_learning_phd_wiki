@@ -10,8 +10,8 @@
 ### CUDA installation
 You may want to see the detailed blog [here](https://www.pugetsystems.com/labs/hpc/How-to-install-CUDA-9-2-on-Ubuntu-18-04-1184/).   
 Take CUDA 10.1 installation for example. 
-1. Download the [CUDA 10.1 Ubuntu 18.04 source](https://developer.nvidia.com/cuda-10.1-download-archive-base?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=runfilelocal)  
-2. `sudo sh cuda_10.1.105_418.39_linux.run`   
+1. Download the [CUDA 10.1.243 Ubuntu 18.04 source](https://developer.nvidia.com/cuda-10.1-download-archive-update2?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=runfilelocal)  
+2. `sudo sh cuda_10.1.243_418.87.00_linux.run`   
 3. Set the path to `~/.bashrc`:
     ```
     # for cuda path
