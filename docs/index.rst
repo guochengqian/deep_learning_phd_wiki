@@ -12,10 +12,10 @@
 Welcome to Deep Learning PhD Wiki
 ===================================
 
-**Deep Learning PhD Wiki** is a wiki doc hosted by `Guocheng Qian <https://www.gcqian.com/>`_ for logging his personal study in Deep Learning (especially on Computer Vision).
+**Deep Learning PhD Wiki** is a Wiki doc hosted by `Guocheng Qian <https://www.gcqian.com/>`_ for logging his personal study in Deep Learning (especially on Computer Vision).
 This wiki aims at aggregating resources and sharing experience in Deep Learning and helping the newbies learn deep learning from zero.
 
-This wiki also shares other experience in my journey towards a qualified PhD graduate (like build personal homepage, read papers, presentations, e.t.c.)
+Deep Learning PhD Wiki also shares other experience in my journey towards a qualified PhD graduate (like building personal homepage, reading papers, presentations, *etc.*)
 
 
 .. toctree::
