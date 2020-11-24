@@ -50,12 +50,12 @@ Some advanced operations
    ``model.conv1[0] = new_model.conv1[0]``
 2. detach some modules
 
-::
+    ::
 
-   for param in model.conv1.parameters():
-       param.requres_grad = False
-   for k, param in model.named_parameters():
-       print(k, param.requires_grad)
+       for param in model.conv1.parameters():
+           param.requres_grad = False
+       for k, param in model.named_parameters():
+           print(k, param.requires_grad)
 
 Suggested Pytorch Libraries
 ---------------------------

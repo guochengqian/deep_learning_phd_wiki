@@ -20,8 +20,8 @@ then you can login into cluster(ibex). For example:
 
 After setting up, only a click is needed to ssh into the ibex system.
 
-Apply for resources in cluster
-------------------------------
+Request resources in cluster (IBEX)
+-----------------------------------
 
 You can either use sbatch or srun to run your program in cluster.
 

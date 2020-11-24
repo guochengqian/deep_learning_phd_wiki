@@ -20,89 +20,89 @@ Take CUDA 10.1 installation for example.
 
 2. install: 
 
-.. code-block:: bash
-
-    sudo sh cuda_10.1.243_418.87.00_linux.run
+    .. code-block:: bash
+    
+        sudo sh cuda_10.1.243_418.87.00_linux.run
 
 3. Set the path to `~/.bashrc`:
-
-.. code-block:: bash
-
-    # for cuda path
-    cuda=cuda-10.1
-    export PATH=/usr/local/$cuda/bin:$PATH
-    export CUDADIR=/usr/local/$cuda
-    export NUMBAPRO_NVVM=$CUDADIR/nvvm/lib64/libnvvm.so
-    export NUMBAPRO_LIBDEVICE=$CUDADIR/nvvm/libdevice/
-    export NVCCDIR=$CUDADIR/bin/nvcc
-    export LD_LIBRARY_PATH=/usr/local/$cuda/lib64:$LD_LIBRARY_PATH
-    export CPATH=/usr/local/$cuda/include:$CPATH
-    export CUDA_HOME=/usr/local/$cuda
-    # for CUDA_DEVICES
-    export CUDA_DEVICE_ORDER=PCI_BUS_ID
+    
+    .. code-block:: bash
+    
+        # for cuda path
+        cuda=cuda-10.1
+        export PATH=/usr/local/$cuda/bin:$PATH
+        export CUDADIR=/usr/local/$cuda
+        export NUMBAPRO_NVVM=$CUDADIR/nvvm/lib64/libnvvm.so
+        export NUMBAPRO_LIBDEVICE=$CUDADIR/nvvm/libdevice/
+        export NVCCDIR=$CUDADIR/bin/nvcc
+        export LD_LIBRARY_PATH=/usr/local/$cuda/lib64:$LD_LIBRARY_PATH
+        export CPATH=/usr/local/$cuda/include:$CPATH
+        export CUDA_HOME=/usr/local/$cuda
+        # for CUDA_DEVICES
+        export CUDA_DEVICE_ORDER=PCI_BUS_ID
 
 Anaconda
 ---------------
+
+Install anaconda
+~~~~~~~~~~~~~~~~~~~
 Download the anaconda individual version from `Anaconda official website <https://www.anaconda.com/products/individual>`_. 
 
-1. Install: `bash Anaconda3-xxx-xxx.sh`, e.g.: 
-
-.. code-block:: bash
-
-    bash Anaconda3-2020.07-Linux-x86_64.sh  
-
-Suggest keeping the default settings
+1. Install: `bash Anaconda3-xxx-xxx.sh`, e.g.: ``bash Anaconda3-2020.07-Linux-x86_64.sh``. Suggest keeping the default settings
 
 2. make sure to add anaconda path to ``~/.bashrc``. If you forgot to do so, just add the below into bashrc:  
-
-.. code-block:: 
-
-    # >>> conda initialize >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$('/home/qiang/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        if [ -f "/home/qiang/anaconda3/etc/profile.d/conda.sh" ]; then
-            . "/home/qiang/anaconda3/etc/profile.d/conda.sh"
+    
+    .. code-block:: 
+    
+        # >>> conda initialize >>>
+        # !! Contents within this block are managed by 'conda init' !!
+        __conda_setup="$('/home/qiang/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+        if [ $? -eq 0 ]; then
+            eval "$__conda_setup"
         else
-            export PATH="/home/qiang/anaconda3/bin:$PATH"
+            if [ -f "/home/qiang/anaconda3/etc/profile.d/conda.sh" ]; then
+                . "/home/qiang/anaconda3/etc/profile.d/conda.sh"
+            else
+                export PATH="/home/qiang/anaconda3/bin:$PATH"
+            fi
         fi
-    fi
-    unset __conda_setup
-    # <<< conda initialize <<<
+        unset __conda_setup
+        # <<< conda initialize <<<
 
-Note: Please change the ``/home/qiang/anaconda3`` to your own path to anaconda3.  
+    Note: Please change the ``/home/qiang/anaconda3`` to your own path to anaconda3.  
 
+Manage env using Anaconda
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Here is how install a specific environment for one project. (deepgcn_env_install.sh, find this file `here <https://raw.githubusercontent.com/guochengqian/deep_learning_phd_wiki/master/scripts/deepgcn_env_install.sh>`_:  
-
-.. code-block:: bash    
-
-    #!/usr/bin/env bash
     
-    # make sure command is : source deepgcn_env_install.sh
+    .. code-block:: bash    
     
-    # uncomment if using cluster
-    # module purge
-    # module load gcc
-    # module load cuda/10.1.105
-    
-    # make sure your annaconda3 is added to bashrc (normally add to bashrc path automatically)
-    source ~/.bashrc
-    
-    conda create -n deepgcn # conda create env
-    conda activate deepgcn  # activate
-    
-    # conda install and pip install
-    conda install -y pytorch torchvision cudatoolkit=10.0 tensorflow python=3.7 -c pytorch
-    # install useful modules
-    pip install tqdm
+        #!/usr/bin/env bash
+        
+        # make sure command is : source deepgcn_env_install.sh
+        
+        # uncomment if using cluster
+        # module purge
+        # module load gcc
+        # module load cuda/10.1.105
+        
+        # make sure your annaconda3 is added to bashrc (normally add to bashrc path automatically)
+        source ~/.bashrc
+        
+        conda create -n deepgcn # conda create env
+        conda activate deepgcn  # activate
+        
+        # conda install and pip install
+        conda install -y pytorch torchvision cudatoolkit=10.0 tensorflow python=3.7 -c pytorch
+        # install useful modules
+        pip install tqdm
         
 Install the env above by: ``source deepgcn_env_install.sh``. 
 Now you install the new env called deepgcn, ``conda activate deepgcn`` and have fun!  
 Take a look at `the official guide <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_ how to use anaconda. 
 
-### Jupyter Lab
+Jupyter Lab
+~~~~~~~~~~~~~
 `Jupyter lab <https://jupyter.org/>`_: Jupyter exists to develop open-source software, open-standards, and services for interactive computing across dozens of programming languages. 
 It's automatically installed when you install anaconda3.  You have to add conda env to jupyter lab manually by code below. 
 
@@ -112,10 +112,7 @@ It's automatically installed when you install anaconda3.  You have to add conda 
     python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
 
 
-Remote Support! 
-Sometimes, we may need to run jupyter lab on our laptop but use the hardware and env of remote workstation. How to do that?
-Open one terminal in your laptop, then open jupyter lab by code below
-
+Remote Support! Sometimes, we may need to run jupyter lab on our laptop but use the hardware and env of remote workstation. How to do that? Open one terminal in your laptop, then open jupyter lab by code below. 
 .. code-block:: bash
 
     ssh remoteAccount@eremoteIp # connect remote server
@@ -141,7 +138,8 @@ Enjoy your remote jupyter lab.
 More info see `blog <http://www.blopig.com/blog/2018/03/running-jupyter-notebook-on-a-remote-server-via-ssh>`_
 
 
-### Git Support (GitHub) 
+Git Support (GitHub) 
+--------------------
 Using ``git`` command to pull, push and manage your code. 
 Here is `an introduction to git <https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners>`_ .  
 CheatSheet for ``git`` is `here <https://education.github.com/git-cheat-sheet-education.pdf>`_.   

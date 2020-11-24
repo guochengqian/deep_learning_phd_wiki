@@ -31,9 +31,11 @@ than you will enjoy your own pages.
    | More information you can looking into `github pages`_ or google.
 
 | If you want use your own domain like xxx.com instead of the free
-  github.io, please refer to follows. ### New domain username.com Setup
-  We have to buy a new domain and redirect the xxx.github.io to this
-  domain.
+  github.io, please refer to follows.
+
+New domain username.com Setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+We have to buy a new domain and redirect the xxx.github.io to this domain.
 | 1. buy a domain(you can buy from alibaba, tencent, godaddy, name.com,
   I buy it from www.laoxuehost.com)
 | 2. set up dns (please refer to details
