@@ -56,7 +56,7 @@ You can check the available GPUs by: `gpu-usage --nodes|grep v100`
 
 
 See [KAUST IBEX offical doc](https://www.hpc.kaust.edu.sa/sites/default/files/files/public/Cluster_training/26_11_2018/0_Ibex_cheat_sheet_Nov_26_2018.pdf) for detailed information. 
-See the [IBEX Best Practice](../files/Deep%20Learning%20Best%20Practices.pdf) for the detailed configuration of best usage on IBEX. 
+See the [IBEX Best Practice](../../../files/Deep%20Learning%20Best%20Practices.pdf) for the detailed configuration of best usage on IBEX. 
 
 2. srun   
 srun allow you to use cluster just like in terminal on your local machine. 

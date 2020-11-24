@@ -1,6 +1,11 @@
-# Install a deep-learning-machine-environment on Ubuntu
+:github_url: https://github.com/guochengqian/deep_learning_phd_wiki
 
-## Dependencies Related
+Install a deep-learning-machine-environment on Ubuntu
+===========
+
+Dependencies Related
+-------------------------
+
 - [CUDA](https://developer.nvidia.com/cuda-10.1-download-archive-base): for accelerated computing 
 - [anaconda](https://www.anaconda.com/products/individual): tool for environment management
 - [jupyter lab](https://jupyter.org/)
@@ -50,7 +55,7 @@ Download the anaconda individual version from [Anaconda official website](https:
     ```
     Note: Please change the `/home/qiang/anaconda3` to your own path to anaconda3.  
 
-Here is how install a specific environment for one project. (deepgcn_env_install.sh, find this file [here](../scripts/deepgcn_env_install.sh)):  
+Here is how install a specific environment for one project. (deepgcn_env_install.sh, find this file [here](../../../scripts/deepgcn_env_install.sh)):  
     
     #!/usr/bin/env bash
     
