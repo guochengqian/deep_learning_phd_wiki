@@ -112,7 +112,8 @@ It's automatically installed when you install anaconda3.  You have to add conda 
     python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
 
 
-Remote Support! Sometimes, we may need to run jupyter lab on our laptop but use the hardware and env of remote workstation. How to do that? Open one terminal in your laptop, then open jupyter lab by code below. 
+Jupyter lab supports using the remote environment to run the kernel and render in the local browser. Support! Sometimes, we may need to run jupyter lab on our laptop but use the hardware and env of remote workstation. How to do that? Open one terminal in your laptop, then open jupyter lab by code below. 
+
 .. code-block:: bash
 
     ssh remoteAccount@eremoteIp # connect remote server
@@ -125,6 +126,8 @@ Open another terminal in your laptop, then map ip by code below:
 
     ssh -N -f -L 8888:localhost:9000 remoteAccount@eremoteIp
 
+Now open your chrome, type: ``http://localhost:8888/``. Enjoy your remote jupyter lab. 
+
 You can kill the port forwarding by:
 
 .. code-block:: bash
@@ -132,8 +135,6 @@ You can kill the port forwarding by:
     ps aux | grep ssh
     kill <id>
 
-Now open your chrome, type: ``http://localhost:8888/`` .    
-Enjoy your remote jupyter lab. 
 
 More info see `blog <http://www.blopig.com/blog/2018/03/running-jupyter-notebook-on-a-remote-server-via-ssh>`_
 
@@ -155,8 +156,8 @@ Set your git global username and email address. This is to let Git know who you 
     git config --global user.name "FIRST_NAME LAST_NAME"
     git config --global user.email "MY_NAME@example.com" 
 
-Terminal Related
-----------------
+Terminal Related Tools
+-----------------------
 
 -  `Terminator`_: useful tool for arranging terminals
 -  `Termius`_: SSH client that works on Desktop and Mobile for

@@ -32,8 +32,7 @@ than you will enjoy your own pages.
 7. Done! It’s so easy. Surf your website username.github.io and enjoy!
    More information you can looking into `github pages`_ or google.
 
-If you want use your own domain like xxx.com instead of the free
-  github.io, please refer to follows.
+If you want use your own domain like xxx.com instead of the free github.io, please refer to follows.
 
 New domain username.com Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
