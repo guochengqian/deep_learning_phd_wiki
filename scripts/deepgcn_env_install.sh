@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# make sure command is : source deepgcn_env_install.sh
+# make sure command is : src deepgcn_env_install.sh
 
 # uncomment to install anaconda3.
 #cd ~/

@@ -1,5 +1,5 @@
-.. Torch Points 3D documentation master file, created by
-   sphinx-quickstart on Wed Mar 18 08:19:48 2020.
+.. Deep Learning PhD WiKi documentation master file, created by
+   sphinx-quickstart on Tue Nov 24 10:30:04 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
@@ -12,7 +12,8 @@
 
 **Deep Learning PhD Wiki** is a wiki doc hosted by `Guocheng Qian <https://www.gcqian.com/>`_ for logging his personal study in Deep Learning (especially on Computer Vision).
 This wiki aims at aggregating resources and sharing experience in Deep Learning and helping the newbies learn deep learning from zero.
-This wiki also shares other important contents towards a qualified PhD graduate (like build personal homepage, read papers, presentations, e.t.c.)
+
+This wiki also shares other experience in my journey towards a qualified PhD graduate (like build personal homepage, read papers, presentations, e.t.c.)
 
 
 .. toctree::
@@ -21,9 +22,9 @@ This wiki also shares other important contents towards a qualified PhD graduate 
    :caption: Deep Learning Wiki
    :hidden:
 
-   src/code/Installation
+   src/code/env_install
    src/code/learnLinux
-   src/code/learnPyTorch
+   src/code/learnPytorch
    src/code/learnIBEX
 
 .. toctree::

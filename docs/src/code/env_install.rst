@@ -1,7 +1,7 @@
 :github_url: https://github.com/guochengqian/deep_learning_phd_wiki
 
 Install a deep-learning-machine-environment on Ubuntu
-===========
+=======================================================
 
 Dependencies Related
 -------------------------
@@ -16,9 +16,17 @@ Dependencies Related
 You may want to see the detailed blog [here](https://www.pugetsystems.com/labs/hpc/How-to-install-CUDA-9-2-on-Ubuntu-18-04-1184/).   
 Take CUDA 10.1 installation for example. 
 1. Download the [CUDA 10.1.243 Ubuntu 18.04 source](https://developer.nvidia.com/cuda-10.1-download-archive-update2?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=runfilelocal)  
-2. `sudo sh cuda_10.1.243_418.87.00_linux.run`   
+
+2. 
+
+.. code-block:: bash
+
+    sudo sh cuda_10.1.243_418.87.00_linux.run
+
 3. Set the path to `~/.bashrc`:
-    ```
+
+.. code-block:: bash
+
     # for cuda path
     cuda=cuda-10.1
     export PATH=/usr/local/$cuda/bin:$PATH
@@ -31,13 +39,15 @@ Take CUDA 10.1 installation for example.
     export CUDA_HOME=/usr/local/$cuda
     # for CUDA_DEVICES
     export CUDA_DEVICE_ORDER=PCI_BUS_ID
-    ```   
 
 ### Anaconda
 Download the anaconda individual version from [Anaconda official website](https://www.anaconda.com/products/individual).   
 1. Install: `bash Anaconda3-xxx-xxx.sh`, e.g., `bash Anaconda3-2020.07-Linux-x86_64.sh`. Suggest keeping the default settings.   
+
 2. make sure to add anaconda path to `~/.bashrc`. If you forgot to do so, just add the below into bashrc:  
-    ```
+
+.. code-block:: 
+
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
     __conda_setup="$('/home/qiang/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -52,11 +62,13 @@ Download the anaconda individual version from [Anaconda official website](https:
     fi
     unset __conda_setup
     # <<< conda initialize <<<
-    ```
-    Note: Please change the `/home/qiang/anaconda3` to your own path to anaconda3.  
+
+Note: Please change the `/home/qiang/anaconda3` to your own path to anaconda3.  
 
 Here is how install a specific environment for one project. (deepgcn_env_install.sh, find this file [here](../../../scripts/deepgcn_env_install.sh)):  
-    
+
+.. code-block:: bash    
+
     #!/usr/bin/env bash
     
     # make sure command is : source deepgcn_env_install.sh
@@ -84,28 +96,36 @@ The official guide how to use anaconda is [here](https://docs.conda.io/projects/
 ### Jupyter Lab
 [Jupyter lab](https://jupyter.org/): Jupyter exists to develop open-source software, open-standards, and services for interactive computing across dozens of programming languages. 
 It's automatically installed when you install anaconda3.  You have to add conda env to jupyter lab manually by code below. 
-    ```
+
+.. code-block:: bash
+
     conda activate myenv
     python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
-    ```
+
 
 Remote Support! 
 Sometimes, we may need to run jupyter lab on our laptop but use the hardware and env of remote workstation. How to do that?
 Open one terminal in your laptop, then open jupyter lab by code below
-    ```
+
+.. code-block:: bash
+
     ssh remoteAccount@eremoteIp # connect remote server
     # jupyter notebook password # uncomment if you have not set password (do it once)
     jupyter lab --port=9000 --no-browser &
-    ```
+
 Open another terminal in your laptop, then map ip by code below:
-    ```
+
+.. code-block:: bash
+
     ssh -N -f -L 8888:localhost:9000 remoteAccount@eremoteIp
-    ```
+
 You can kill the port forwarding by:
-    ```
+
+.. code-block:: bash
+
     ps aux | grep ssh
     kill <id>
-    ```
+
 Now open your chrome, type: `http://localhost:8888/`   
 Enjoy your remote jupyter lab. 
 
