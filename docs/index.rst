@@ -9,6 +9,8 @@
    :maxdepth: 2
    :caption: Contents:
 
+Welcome to Deep Learning PhD Wiki
+===================================
 
 **Deep Learning PhD Wiki** is a wiki doc hosted by `Guocheng Qian <https://www.gcqian.com/>`_ for logging his personal study in Deep Learning (especially on Computer Vision).
 This wiki aims at aggregating resources and sharing experience in Deep Learning and helping the newbies learn deep learning from zero.
