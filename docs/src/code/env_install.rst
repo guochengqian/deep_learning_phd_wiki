@@ -111,6 +111,7 @@ It's automatically installed when you install anaconda3.  You have to add conda 
     conda activate myenv
     python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
 
+You may have to install ``ipykernel`` at first: ``conda install ipykernel``. 
 
 Jupyter lab supports using the remote environment to run the kernel and render in the local browser. Support! Sometimes, we may need to run jupyter lab on our laptop but use the hardware and env of remote workstation. How to do that? Open one terminal in your laptop, then open jupyter lab by code below. 
 

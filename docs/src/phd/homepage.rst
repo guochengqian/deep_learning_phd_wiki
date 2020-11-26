@@ -37,12 +37,19 @@ If you want use your own domain like xxx.com instead of the free github.io, plea
 New domain username.com Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We have to buy a new domain and redirect the xxx.github.io to this domain.
+
 1. buy a domain(you can buy from alibaba, tencent, godaddy, name.com)
+
 2. set up dns (please refer to details
-3. repo setting (Type your new website in custom domain in repo
-  setting. Like the picture show.
-4. wait for the new domain to be become effective. (Be patient, it
-  could be as long as 1day)
+
+3. repo setting (Type your new website in custom domain in repo setting. Like the picture show.
+
+    .. image:: https://raw.githubusercontent.com/guochengqian/deep_learning_phd_wiki/master/misc/github_page.png
+      :width: 400
+      :alt: ../../misc/github_page.png
+
+4. wait for the new domain to be become effective. (Be patient, it could take as long as 24 hours.)
+
 5. Done! Surf your website username.com and enjoy.
 
 If you have any problem, you can looking into `Github Page Redirect`_. for more details.
